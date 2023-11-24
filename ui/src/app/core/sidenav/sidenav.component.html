@@ -1,0 +1,42 @@
+<div class="min-h-screen flex surface-ground">
+    <div id="app-sidebar-11" class="surface-section h-screen hidden lg:block flex-shrink-0 fixed lg:sticky left-0 top-0 z-1 border-right-1 surface-border select-none" style="width:280px">
+        <div class="flex flex-column h-full">
+            <div class="flex align-items-center px-3 py-5 mt-5 flex-shrink-0" style="height:60px">
+                <img src="assets/img/logo.png" alt="Image" height="100">
+            </div>
+            <div class="overflow-y-auto">
+                <ul class="list-none p-3 m-0">
+                    <li>
+                        <div pRipple class="p-3 flex align-items-center justify-content-between text-600 cursor-pointer" pStyleClass="@next" enterClass="hidden" enterActiveClass="slidedown" leaveToClass="hidden" leaveActiveClass="slideup">
+                            <span class="font-medium">MENU</span>
+                            <i class="pi pi-chevron-down"></i>
+                        </div>
+                        <ul class="list-none p-0 m-0 overflow-hidden">
+                            <li>
+                                <a pRipple class="flex align-items-center cursor-pointer p-3 text-700 border-2 border-transparent hover:border-300 transition-duration-150 transition-colors text-indigo-500" style="border-radius: 12px">
+                                  <i class="{{selectedNav.icon}} mr-2"></i>
+                                    <span class="font-medium">{{selectedNav.label}}</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="min-h-screen flex flex-column relative flex-auto">
+        <div class="flex justify-content-between align-items-center px-5 surface-0 border-bottom-1 surface-border relative lg:static" style="height:60px">
+            <a pRipple class="cursor-pointer inline-flex align-items-center justify-content-center lg:hidden text-700 mr-3" pStyleClass="#app-sidebar-11" enterClass="hidden" enterActiveClass="fadeinleft" leaveToClass="hidden" leaveActiveClass="fadeoutleft" [hideOnOutsideClick]="true">
+                <i class="pi pi-bars text-4xl"></i>
+            </a>
+
+            <h1>{{selectedNav.label}}</h1>
+                <br>
+        </div>
+        <div class="p-5 flex flex-column flex-auto">
+            <div class=" surface-section flex-auto">
+              <router-outlet></router-outlet>
+            </div>
+        </div>
+    </div>
+</div>
