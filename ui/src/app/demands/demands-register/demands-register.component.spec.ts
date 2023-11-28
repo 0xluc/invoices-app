@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { InvoicesRegisterComponent } from './invoices-register.component';
+import { InvoicesRegisterComponent } from './demands-register.component';
 
 describe('InvoicesRegisterComponent', () => {
   let component: InvoicesRegisterComponent;

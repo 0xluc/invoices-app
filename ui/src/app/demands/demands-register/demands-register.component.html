@@ -1,0 +1,70 @@
+<p-progressSpinner *ngIf="loading"></p-progressSpinner>
+<div class="grid">
+  <div class="col-12">
+    <form *ngIf="!loading" #demandForm="ngForm">
+      <div class="grid">
+        <div class="col-12 p-fluid">
+          <label for="demandDescription">Descrição</label>
+          <textarea
+            name="demandDescription"
+            cols="30"
+            rows="5"
+            pInputTextarea
+            [(ngModel)]="demand.descricao"
+            required
+          ></textarea>
+        </div>
+        <div class="col-6 p-fluid">
+          <label for="demandRequestedBy">Solicitado Por</label>
+          <input
+            name="demandRequestedBy"
+            type="text"
+            pInputText
+            [(ngModel)]="demand.solicitado_por"
+            required
+          />
+        </div>
+        <div class="col-6 p-fluid">
+          <label for="demandValor">Valor</label>
+          <p-inputNumber
+            name="demandValor"
+            mode="currency"
+            currency="BRL"
+            [(ngModel)]="demand.valor"
+            locale="pt-BR"
+            [required]="true"
+          ></p-inputNumber>
+        </div>
+        <div class="col-6 p-fluid">
+          <label for="demandData">Data de criação</label>
+          <p-calendar
+            appendTo="body"
+            name="demandData"
+            [(ngModel)]="demand.data_cadastro"
+            [showIcon]="true"
+            dateFormat="dd/mm/yy"
+            [required]="true"
+          ></p-calendar>
+        </div>
+        <div class="col-6">
+          <label for="demandStatus">Finalizado</label>
+          <br />
+          <p-inputSwitch
+            styleClass="mt-2"
+            name="demandStats"
+            innputId="demandStatus"
+            [(ngModel)]="demand.status"
+          ></p-inputSwitch>
+        </div>
+        <div class="col-12 p-fluid">
+          <p-button
+            styleClass="p-fluid"
+            [disabled]="!!(demandForm.invalid)"
+            (onClick)="save()"
+            label="Salvar"
+          ></p-button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
